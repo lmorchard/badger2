@@ -221,6 +221,8 @@ INSTALLED_APPS = (
     # L10n
     'product_details',
 
+    # migrations
+    'south',
 )
 
 # Tells the extract script what files to look for L10n in and what function
