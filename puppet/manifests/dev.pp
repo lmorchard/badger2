@@ -22,8 +22,11 @@ class apache {
     service { "httpd":
         ensure    => running,
         enable    => true,
-        require   => Package['httpd-devel'],
-        subscribe => File['/etc/httpd/conf.d/playdoh-site.conf']
+        require   => [
+            Package['httpd-devel'],
+            File['/etc/httpd/conf.d/playdoh-site.conf']
+        ]
+        #subscribe => File['/etc/httpd/conf.d/playdoh-site.conf']
     }
 }
 
