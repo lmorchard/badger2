@@ -23,6 +23,12 @@ DATABASES = {}  # See settings_local.
 
 # Site ID is used by Django's Sites framework.
 SITE_ID = 1
+# Logging
+LOG_LEVEL = logging.DEBUG
+HAS_SYSLOG = True
+SYSLOG_TAG = "http_app_playdoh"  # Change this after you fork.
+LOGGING_CONFIG = None
+LOGGING = { }
 
 
 ## Internationalization.
@@ -262,11 +268,12 @@ HMAC_KEYS = {  # for bcrypt only
 TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
 
 ## Celery
-BROKER_HOST = 'localhost'
-BROKER_PORT = 5672
-BROKER_USER = 'playdoh'
-BROKER_PASSWORD = 'playdoh'
-BROKER_VHOST = 'playdoh'
+
+# True says to simulate background tasks without actually using celeryd.
+# Good for local development in case celeryd is not running.
+CELERY_ALWAYS_EAGER = True
+
 BROKER_CONNECTION_TIMEOUT = 0.1
 CELERY_RESULT_BACKEND = 'amqp'
 CELERY_IGNORE_RESULT = True
+CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
