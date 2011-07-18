@@ -10,8 +10,8 @@ Vagrant::Config.run do |config|
 
     config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
 
-    # Add to /etc/hosts: 33.33.33.23 dev.badger.mozilla.org
-    config.vm.network "33.33.33.23"
+    # Add to /etc/hosts: 33.33.33.24 dev.badger.mozilla.org
+    config.vm.network "33.33.33.24"
 
     config.vm.provision :puppet do |puppet|
         puppet.manifests_path = "puppet/manifests"

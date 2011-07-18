@@ -9,9 +9,7 @@ class repos {
             exec { "repo_epel":
                 command => "/bin/rpm -Uvh $epel_url",
                 creates => '/etc/yum.repos.d/epel.repo',
-                require => File["/etc/yum.conf"]
             }
-
         }
     }
 

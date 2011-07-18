@@ -10,7 +10,8 @@ class python {
         creates => "/usr/bin/pip",
         require => Package["python26-devel","python26-distribute"]
     }
-    exec { "pip-install-compiled":
+    exec { "pip-install-requirements":
+        timeout => 3600, # Too long, but this can take awhile
         command => "/usr/bin/pip install -r $PROJ_DIR/requirements/compiled.txt",
         require => Exec['pip-install']
     }
