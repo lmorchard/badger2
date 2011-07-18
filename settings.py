@@ -1,7 +1,7 @@
 # Django settings file for a project based on the playdoh template.
 
 import os
-
+import logging
 from django.utils.functional import lazy
 
 # Make file paths relative to settings.
@@ -229,6 +229,10 @@ INSTALLED_APPS = (
 
     # migrations
     'south',
+
+    "profiles",
+
+    "badger",
 )
 
 # Tells the extract script what files to look for L10n in and what function
