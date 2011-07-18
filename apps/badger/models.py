@@ -6,23 +6,26 @@ from django.template.defaultfilters import slugify
 
 def get_permissions_for(self, user):
     """Mixin method to collect permissions for a model instance""" 
-    pre, suf = 'allows_', '_by'
-    pre_len, suf_len = len(pre), len(suf)
-    methods = (
-        m for m in dir(self)
-        if m.startswith(pre) and m.endswith(suf)
-    )
+    pre = 'allows_'
+    pre_len = len(pre)
+    methods = ( m for m in dir(self) if m.startswith(pre) )
     perms = dict(
-        ( m[pre_len:0-suf_len], getattr(self, m)(user) )
+        ( m[pre_len:], getattr(self, m)(user) )
         for m in methods
     )
     return perms
 
+class BadgerException(Exception): 
+    """General Badger model exception"""
+
 
 class BadgeManager(models.Manager):
     """Manager for Badge model objects"""
-    pass
 
+class BadgeException(BadgerException): 
+    """Badge model exception"""
+class BadgeAwardNotAllowedException(BadgeException):
+    """Attempt to award a badge not allowed."""
 
 class Badge(models.Model):
     """Representation of a badge"""
@@ -46,16 +49,30 @@ class Badge(models.Model):
             self.slug = slugify(self.title)
         super(Badge,self).save(**kwargs)
 
+    def allows_award_to(self, user):
+        """Is award_to() allowed for this user?"""
+        if user.is_staff or user.is_superuser:
+            return True
+        if user == self.creator: 
+            return True
+        return False
+
     def award_to(self, awarder, awardee, nomination=None):
+        """Award this badge to the awardee on the awarder's behalf, with an
+        optional nomination involved"""
+        if not self.allows_award_to(awarder):
+            raise BadgeAwardNotAllowedException()
         award = Award(user=awardee, badge=self, creator=awarder,
                 nomination=nomination)
         award.save()
         return award
 
     def is_awarded_to(self, user):
+        """Has this badge been awarded to the user?"""
         return Award.objects.filter(user=user, badge=self).count() > 0
 
     def nominate_for(self, nominator, nominee):
+        """Nominate a nominee for this badge on the nominator's behalf"""
         nomination = Nomination(badge=self, creator=nominator, nominee=nominee)
         nomination.save()
         return nomination
@@ -68,16 +85,12 @@ class NominationManager(models.Manager):
     pass
 
 
-class NominationException(Exception): 
-    pass
-
-
-class NominationApproveNotAllowedException(NominationException): 
-    pass
-
-
-class NominationAcceptNotAllowedException(NominationException): 
-    pass
+class NominationException(BadgerException): 
+    """Nomination model exception"""
+class NominationApproveNotAllowedException(NominationException):
+    """Attempt to approve a nomination was disallowed"""
+class NominationAcceptNotAllowedException(NominationException):
+    """Attempt to accept a nomination was disallowed"""
 
 
 class Nomination(models.Model):
@@ -117,7 +130,7 @@ class Nomination(models.Model):
         """Has this nomination been approved?"""
         return self.approver is not None
 
-    def allows_accept_by(self, user):
+    def allows_accept(self, user):
         if user.is_staff or user.is_superuser:
             return True
         if user == self.nominee: 
@@ -127,7 +140,7 @@ class Nomination(models.Model):
     def accept(self, user):
         """Accept this nomination for the nominee.
         Also awards, if already approved."""
-        if not self.allows_accept_by(user):
+        if not self.allows_accept(user):
             raise NominationAcceptNotAllowedException()
         self.accepted = True
         self.save()

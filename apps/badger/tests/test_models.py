@@ -16,6 +16,7 @@ from django.template.defaultfilters import slugify
 
 from django.contrib.auth.models import User
 from badger.models import ( Badge, Award, Nomination,
+        BadgeAwardNotAllowedException,
         NominationApproveNotAllowedException,
         NominationAcceptNotAllowedException )
 
@@ -91,6 +92,19 @@ class BadgerBadgeTest(TestCase):
 
         ct = Award.objects.filter(nomination=nomination).count()
         eq_(1, ct, "There should be an award associated with the nomination")
+
+    def test_disallowed_badge_award(self):
+        """By default, only badge creator should be allowed to award a
+        badge."""
+
+        badge = self._get_badge()
+        other_user = self._get_user(username="other")
+
+        try:
+            award = badge.award_to(other_user, self.user_1)
+            ok_(False, "Award should not have succeeded")
+        except BadgeAwardNotAllowedException, e:
+            ok_(True)
 
     def test_disallowed_nomination_approval(self):
         """By default, only badge creator should be allowed to approve a
