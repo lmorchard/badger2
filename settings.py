@@ -125,9 +125,7 @@ SECRET_KEY = '1iz#v0m55@h26^m6hxk3a7at*h$qj_2a$juu1#nv50548j(x1v'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'jingo.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -168,11 +166,18 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
+        'main': (
+            'css/main.css',
+        ),
         'example_css': (
             'css/examples/main.css',
         ),
     },
     'js': {
+        'main': (
+            'js/libs/jquery-1.4.4.min.js',
+            'js/main.js',
+        ),
         'example_js': (
             'js/libs/jquery-1.4.4.min.js',
         ),
@@ -216,13 +221,11 @@ INSTALLED_APPS = (
     'django_sha2',  # Load after auth to monkey-patch it.
 
     'django.contrib.contenttypes',
-    # 'django.contrib.sessions',
-    # 'django.contrib.sites',
-    # 'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
 
     # L10n
     'product_details',
@@ -231,6 +234,7 @@ INSTALLED_APPS = (
     'south',
 
     "profiles",
+    "registration",
 
     "badger",
 )
@@ -281,3 +285,6 @@ BROKER_CONNECTION_TIMEOUT = 0.1
 CELERY_RESULT_BACKEND = 'amqp'
 CELERY_IGNORE_RESULT = True
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
+
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_ACTIVATION_DAYS = 7

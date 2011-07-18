@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ LANG }}" dir="{{ DIR }}" id="badger-mozilla-org"
+        xmlns:fb="http://www.facebook.com/2008/fbml"
+        xmlns:og="http://ogp.me/ns#">
+    <head>
+        <title>{% block title %}{{ _('Badger') }}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        {# <link rel="home" href="{{ url('home') }}"> #}
+        <link rel="copyright" href="#copyright">
+        <link rel="shortcut icon" href="{{MEDIA_URL}}img/favicon.ico"/>
+
+        {% block site_css %}
+            {{ css('main') }}
+            {% for style in styles %}
+                {{ css(style) }}
+            {% endfor %}
+        {% endblock %}
+
+        {% block extrahead %}{% endblock %}
+    </head>
+
+    <body id="{% block pageid %}{% endblock %}" class="html-{{ DIR }} {% block bodyclass %}{% endblock %}" role="document">
+
+        <header id="masthead" class="{% block headerclass %}minor{% endblock %}">
+            <a href="{{url('home')}}">Badger</a>:
+            {% if request.user.is_authenticated() %}
+                Welcome back, {{ request.user }}
+                -
+                <a href="{{url('django.contrib.auth.views.logout')}}">Logout</a>
+                -
+                <a href="{{url('django.contrib.auth.views.password_change')}}">Change password</a>
+            {% else %}
+                <a href="{{url('django.contrib.auth.views.login')}}">Login</a>
+            {% endif %}
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer id="site-info" role="contentinfo">
+            <div class="wrap">
+            </div>
+        </footer>
+
+        {% block site_js %}
+            {{ js('main') }}
+            {% for script in scripts %}
+                {{ js(script) }}
+            {% endfor %}
+        {% endblock %}
+        {% block js %}{% endblock %}
+
+    </body>
+</html>

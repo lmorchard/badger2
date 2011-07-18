@@ -1,19 +1,21 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.views.generic.simple import direct_to_template
+
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    (r'', include('examples.urls')),
+    url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    #(r'', include('examples.urls')),
+    (r'^accounts/', include('django.contrib.auth.urls')),
+    (r'^accounts/', include('registration.backends.default.urls')),
 
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^admin/', include(admin.site.urls)),
+
 )
 
 ## In DEBUG mode, serve media files through Django.
