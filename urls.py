@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
 
     #(r'', include('examples.urls')),
+    (r'^badger/', include('badger.urls')),
     (r'^accounts/', include('django.contrib.auth.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
 

@@ -31,6 +31,8 @@
                 -
                 <a href="{{url('django.contrib.auth.views.password_change')}}">Change password</a>
             {% else %}
+                <a href="{{url('registration.views.register')}}">Register</a>
+                -
                 <a href="{{url('django.contrib.auth.views.login')}}">Login</a>
             {% endif %}
         </header>

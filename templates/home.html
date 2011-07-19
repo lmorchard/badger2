@@ -2,7 +2,13 @@
 
 {% block content %}
 
-<h1>Welcome</h1>
-<p>This is not Zombocom</p>
+<section>
+    <h1>Home</h1>
+    <p>Welcome to Badger Central</p>
+    <nav><ul>
+        <li><a href="{{ url('badger_create_badge') }}">Create a badge</a></li>
+
+    </ul></nav>
+</section>
 
 {% endblock %}

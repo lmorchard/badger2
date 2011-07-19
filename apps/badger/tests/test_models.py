@@ -2,9 +2,6 @@ import logging
 
 from django.conf import settings
 
-settings.DEMO_MAX_FILESIZE_IN_ZIP = 1 * 1024 * 1024
-settings.DEMO_MAX_ZIP_FILESIZE = 1 * 1024 * 1024
-
 from django.http import HttpRequest
 from django.test import TestCase
 from django.test.client import Client

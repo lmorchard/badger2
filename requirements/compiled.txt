@@ -6,3 +6,7 @@ PIL==1.1.7
 hmac==20101005
 hashlib==20081119
 py-bcrypt==0.2
+
+# for pyquery
+lxml>=2.1
+pyquery
