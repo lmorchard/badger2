@@ -4,8 +4,8 @@ import random
 
 from django.conf import settings
 
-from django.http import ( HttpResponseRedirect, HttpResponse,
-        HttpResponseForbidden, HttpResponseNotFound )
+from django.http import (HttpResponseRedirect, HttpResponse,
+        HttpResponseForbidden, HttpResponseNotFound)
 
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template import RequestContext
@@ -20,27 +20,29 @@ try:
     from tower import ugettext_lazy as _
 except ImportError, e:
     from django.utils.translation import ugettext_lazy as _
-    
+
 from django.views.generic.base import View
 from django.views.generic.list_detail import object_list
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-from .forms import ( BadgeNewForm, BadgeEditForm )
-from .models import ( Badge, Award, Nomination,
+from .forms import (BadgeNewForm, BadgeEditForm)
+from .models import (Badge, Award, Nomination,
         BadgeAwardNotAllowedException,
         NominationApproveNotAllowedException,
-        NominationAcceptNotAllowedException )
+        NominationAcceptNotAllowedException)
 
-        
+
 def home(request):
     return render_to_response('badger/home.html', {
     }, context_instance=RequestContext(request))
 
+
 def detail(request, slug):
     return render_to_response('badger/badge_detail.html', {
     }, context_instance=RequestContext(request))
+
 
 @login_required
 def create(request):
