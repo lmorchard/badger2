@@ -92,13 +92,13 @@ def lazy_langs():
     from django.conf import settings
     from product_details import product_details
     langs = DEV_LANGUAGES if settings.DEV else PROD_LANGUAGES
-    return dict([(lang.lower(), product_details.languages[lang]['native'])
+    return ([(lang.lower(), product_details.languages[lang]['native'])
                  for lang in langs])
 
 # Where to store product details etc.
 PROD_DETAILS_DIR = path('lib/product_details_json')
 
-LANGUAGES = lazy(lazy_langs, dict)()
+LANGUAGES = lazy(lazy_langs, list)()
 
 # Paths that don't require a locale code in the URL.
 SUPPORTED_NONLOCALES = ['media']
