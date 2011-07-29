@@ -131,7 +131,7 @@ TEMPLATE_LOADERS = (
 )
 
 JINGO_EXCLUDE_APPS = (
-    "admin", "debug_toolbar",
+    "admin", "debug_toolbar", "comments",
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -220,7 +220,6 @@ INSTALLED_APPS = (
     # Third-party apps
     'commonware.response.cookies',
     'djcelery',
-    'django_nose',
 
     # Django contrib apps
     'django.contrib.auth',
@@ -233,16 +232,21 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
+    'django.contrib.comments',
+
     # L10n
     'product_details',
-
-    # migrations
-    'south',
 
     "profiles",
     "registration",
 
     "badger",
+
+    # migrations
+    'south',
+
+    # testing
+    'django_nose',
 )
 
 # Tells the extract script what files to look for L10n in and what function

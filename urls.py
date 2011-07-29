@@ -11,6 +11,9 @@ urlpatterns = patterns('',
 
     #(r'', include('examples.urls')),
     (r'^badger/', include('badger.urls')),
+    
+    (r'^comments/', include('django.contrib.comments.urls')),
+
     (r'^accounts/', include('django.contrib.auth.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
 
