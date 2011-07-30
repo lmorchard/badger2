@@ -4,9 +4,12 @@
 [submodule "vendor-local"]
 	path = vendor-local
 	url = git://github.com/lmorchard/badger2-lib.git
-[submodule "django-badger"]
-	path = django-badger
-	url = git://github.com/lmorchard/django-badger.git
 [submodule "packages/django-badger"]
 	path = packages/django-badger
 	url = git://github.com/lmorchard/django-badger.git
+[submodule "packages/django-badger-multiplayer"]
+	path = packages/django-badger-multiplayer
+	url = git://github.com/lmorchard/django-badger-multiplayer.git
+[submodule "packages/django-badger-api"]
+	path = packages/django-badger-api
+	url = git://github.com/lmorchard/django-badger-api.git
