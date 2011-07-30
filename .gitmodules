@@ -7,3 +7,6 @@
 [submodule "django-badger"]
 	path = django-badger
 	url = git://github.com/lmorchard/django-badger.git
+[submodule "packages/django-badger"]
+	path = packages/django-badger
+	url = git://github.com/lmorchard/django-badger.git

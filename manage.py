@@ -12,7 +12,7 @@ prev_sys_path = list(sys.path)
 
 site.addsitedir(path('apps'))
 site.addsitedir(path('lib'))
-site.addsitedir(path('django-badger'))
+site.addsitedir(path('packages'))
 
 # Local (project) vendor library
 site.addsitedir(path('vendor-local'))
