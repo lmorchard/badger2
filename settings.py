@@ -240,6 +240,7 @@ INSTALLED_APPS = (
     "profiles",
     "registration",
 
+    "badger_multiplayer",
     "badger",
 
     # migrations

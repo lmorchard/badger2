@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
 
     #(r'', include('examples.urls')),
+    (r'^badger/', include('badger_multiplayer.urls')),
     (r'^badger/', include('badger.urls')),
     
     (r'^comments/', include('django.contrib.comments.urls')),
