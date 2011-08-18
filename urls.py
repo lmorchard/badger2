@@ -6,12 +6,26 @@ from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
+import badger
+badger.autodiscover()
 
-    #(r'', include('examples.urls')),
-    (r'^badger/', include('badger_multiplayer.urls')),
-    (r'^badger/', include('badger.urls')),
+from badger import Award, Progress
+from badger_multiplayer.models import Badge, Nomination
+
+urlpatterns = patterns('',
+
+    url(r'^$', direct_to_template, dict(
+        template='home.html',
+        extra_context=dict(
+            badge_list=Badge.objects.order_by('-created').all()[:5],
+            award_list=Award.objects.order_by('-created').all()[:5],
+        )
+    ), name='home'),
+
+    (r'', include('examples.urls')),
+
+    (r'^badges/', include('badger_multiplayer.urls')),
+    (r'^badges/', include('badger.urls')),
     
     (r'^comments/', include('django.contrib.comments.urls')),
 

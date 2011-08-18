@@ -6,8 +6,23 @@
     <h1>Home</h1>
     <p>Welcome to Badger Central</p>
     <nav><ul>
-        <li><a href="{{ url('badger.views.home') }}">List badges</a></li>
-        <li><a href="{{ url('badger.views.create') }}">Create a badge</a></li>
+        <li><a href="{{ url('badger_multiplayer.views.create') }}">Create a badge</a></li>
+    </ul></nav>
+</section>
+
+<section>
+    <h1>Recent awards</h1>
+    {% include "badger/includes/awards_list.html" %}
+    <nav><ul>
+        <li><a href="{{ url('badger.views.index') }}">More...</a></li>
+    </ul></nav>
+</section>
+
+<section>
+    <h1>Recent badges</h1>
+    {% include "badger/includes/badges_list.html" %}
+    <nav><ul>
+        <li><a href="{{ url('badger.views.index') }}">More...</a></li>
     </ul></nav>
 </section>
 
