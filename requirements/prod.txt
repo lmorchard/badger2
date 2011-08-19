@@ -26,3 +26,5 @@ Babel>=0.9.4
 
 # Apps
 -e git://github.com/lmorchard/django-badger.git#egg=django-badger
+-e git://github.com/lmorchard/django-badger-multiplayer.git#egg=django-badger-multiplayer
+-e git://github.com/lmorchard/django-badger-api.git#egg=django-badger-api

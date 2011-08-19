@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+    <link rel="alternate" type="application/atom+xml"
+        title="{{ _('Recently awarded badges') }}"
+        href="{{ url('badger.feeds.awards_recent', 'atom') }}" />
+    <link rel="alternate" type="application/atom+xml"
+        title="{{ _('Recently created badges') }}"
+        href="{{ url('badger_multiplayer.feeds.badges_recent', 'atom') }}" />
+{% endblock %}
+
 {% block content %}
 
 <section>
