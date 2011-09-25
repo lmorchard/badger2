@@ -3,7 +3,8 @@
 class python_prereqs {
     package { 
         [ "python26-devel", "python26-libs", "python26-distribute",
-            "python26-mod_wsgi", "libxml2-devel", "libxslt-devel" ]:
+            "python26-mod_wsgi", "libxml2-devel", "libxslt-devel",
+            "libjpeg", "libjpeg-devel"]:
             ensure => installed;
     }
     exec { "pip-install": 
