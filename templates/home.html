@@ -11,15 +11,16 @@
 
 {% block content %}
 
-<section>
-    <h1>Home</h1>
-    <p>Welcome to Badger Central</p>
+{% if request.user.is_authenticated() %}
+<section id="things_to_do">
+    <h1>Things to Do</h1>
     <nav><ul>
-        <li><a href="{{ url('badger_multiplayer.views.create') }}">Create a badge</a></li>
+        <li><a class="action" href="{{ url('badger_multiplayer.views.create') }}">Create a badge</a></li>
     </ul></nav>
 </section>
+{% endif %}
 
-<section>
+<section id="recent_awards">
     <h1>Recent awards</h1>
     {% include "badger/includes/awards_list.html" %}
     <nav><ul>
@@ -27,7 +28,7 @@
     </ul></nav>
 </section>
 
-<section>
+<section id="recent_badges">
     <h1>Recent badges</h1>
     {% include "badger/includes/badges_list.html" %}
     <nav><ul>

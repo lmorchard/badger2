@@ -173,6 +173,7 @@ def JINJA_CONFIG():
 MINIFY_BUNDLES = {
     'css': {
         'main': (
+            'css/normalize.css',
             'css/main.css',
         ),
         'example_css': (

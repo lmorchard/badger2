@@ -1,0 +1,140 @@
+header#masthead {
+     background-color: #3C3C3C;
+     position: relative;
+}
+
+header#masthead .logo a {
+     background: url("../img/logo.png") no-repeat scroll 0pt 0pt transparent;
+     border: 1px solid #373638;
+     color: #EEEEEE;
+     display: block;
+     font-size: 2.5em;
+     line-height: 94px;
+     padding-left: 110px;
+     text-decoration: none;
+}
+
+header#masthead nav {
+     color: #EEEEEE;
+     position: absolute;
+     right: 1em;
+     top: 1em;
+}
+
+header#masthead nav a {
+     color: #AAAAAA;
+}
+
+section#main {
+     padding: 0.5em 1em;
+}
+
+section#things_to_do {
+    padding: 0.125em 0.5em;
+}
+
+section#things_to_do nav ul li {
+    list-style-type: square;
+}
+
+section#recent_awards, section#recent_badges {
+     border: 1px solid #333333;
+     float: left;
+     margin: 1em;
+     padding: 0.125em 0.5em;
+     position: relative;
+     width: 435px;
+}
+
+section#recent_awards h1, section#recent_badges h1 {
+     text-align: center;
+}
+
+section#recent_awards nav, section#recent_badges nav {
+     position: absolute;
+     right: 1em;
+     top: 0.5em;
+}
+
+section#recent_awards nav a, section#recent_badges nav a {
+     font-size: 0.8em;
+}
+
+ul.awards, ul.badges {
+     margin: 1em;
+     min-height: 420px;
+     padding: 0pt;
+     width: 420px;
+}
+
+ul.awards li, ul.badges li {
+     border: 1px solid #AAAAAA;
+     list-style: none outside none;
+     margin: 2px;
+     padding: 0pt;
+}
+
+ul.awards li img, ul.badges li img {
+     display: block;
+}
+
+li.badge, li.award {
+     display: block;
+     float: left;
+     padding: 0.25em;
+     position: relative;
+}
+
+li.badge a.image, li.award a.image {
+     display: block;
+}
+
+li.badge a.label, li.award a.label {
+     background: none repeat scroll 0% 0% #222222;
+     bottom: 0pt;
+     color: #FFFFFF;
+     display: block;
+     font-size: 0.9em;
+     opacity: 0.85;
+     position: absolute;
+     text-align: center;
+     text-decoration: none;
+     width: 128px;
+}
+
+li.badge span.badge_title, li.badge span.relation, li.badge span.user, li.award span.badge_title, li.award span.relation, li.award span.user {
+     display: block;
+     padding: 2px;
+}
+
+li.award span.relation {
+     font-size: 0.75em;
+}
+
+form {
+    
+}
+
+form ul {
+     margin: 0pt;
+     padding: 0pt;
+}
+
+form ul li {
+     list-style: none outside none;
+     margin: 0pt;
+     padding: 0.25em;
+}
+
+form ul li label {
+     display: block;
+     float: left;
+     margin: 0.25em 0.5em 0.25em 0em;
+     text-align: right;
+     width: 15ex;
+}
+
+form ul li input.submit {
+     margin-left: 16ex;
+     padding: 0.25em;
+}

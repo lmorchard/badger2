@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     url(r'^$', direct_to_template, dict(
         template='home.html',
         extra_context=dict(
-            badge_list=Badge.objects.order_by('-created').all()[:5],
-            award_list=Award.objects.order_by('-created').all()[:5],
+            badge_list=Badge.objects.order_by('-created').all()[:9],
+            award_list=Award.objects.order_by('-created').all()[:9],
         )
     ), name='home'),
 
