@@ -28,11 +28,11 @@
             </div>
             <nav>
                 {% if request.user.is_authenticated() %}
-                    Welcome back, {{ request.user }}
-                    -
                     <a href="{{url('django.contrib.auth.views.logout')}}">Logout</a>
                     -
                     <a href="{{url('django.contrib.auth.views.password_change')}}">Change password</a>
+                    <br />
+                    Welcome back, {{ request.user }}
                 {% else %}
                     <a href="{{url('registration.views.register')}}">Register</a>
                     -
