@@ -1,19 +1,26 @@
 """Example views. Feel free to delete this app."""
 
 from django import http
-from django.views.decorators.csrf import csrf_exempt
 
 import bleach
+import commonware
+from mobility.decorators import mobile_template
 import jingo
+from session_csrf import anonymous_csrf
 
 
-def home(request):
+log = commonware.log.getLogger('playdoh')
+
+
+@mobile_template('examples/{mobile/}home.html')
+def home(request, template=None):
     """Main example view."""
     data = {}  # You'd add data here that you're sending to the template.
-    return jingo.render(request, 'examples/home.html', data)
+    log.debug("I'm alive!")
+    return jingo.render(request, template, data)
 
 
-@csrf_exempt
+@anonymous_csrf
 def bleach_test(request):
     """A view outlining bleach's HTML sanitization."""
     allowed_tags = ('strong', 'em')
