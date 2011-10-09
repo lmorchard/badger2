@@ -24,6 +24,8 @@ Babel>=0.9.4
 -e git://github.com/clouserw/tower.git#egg=tower
 -e git://github.com/fwenzel/django-mozilla-product-details#egg=django-mozilla-product-details
 
+-e git://github.com/mozilla/django-browserid.git#egg=django-browserid
+
 # Apps
 -e git://github.com/lmorchard/django-badger.git#egg=django-badger
 -e git://github.com/lmorchard/django-badger-multiplayer.git#egg=django-badger-multiplayer
