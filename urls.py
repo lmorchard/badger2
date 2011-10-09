@@ -9,8 +9,8 @@ admin.autodiscover()
 import badger
 badger.autodiscover()
 
-from badger import Award, Progress
-from badger_multiplayer.models import Badge, Nomination
+from badger import Progress
+from badger_multiplayer.models import Badge, Award, Nomination
 
 urlpatterns = patterns('',
 

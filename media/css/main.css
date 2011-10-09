@@ -50,13 +50,21 @@ nav.pagination ul.paging {
 nav.pagination ul.paging li {
      display: inline;
 }
+
 nav.pagination ul.paging li.first {
+    
 }
+
 nav.pagination ul.paging li.last {
+    
 }
+
 nav.pagination ul.paging li.next {
+    
 }
+
 nav.pagination ul.paging li.prev {
+    
 }
 
 section#main {
@@ -97,8 +105,13 @@ section#recent_awards nav a, section#recent_badges nav a {
 
 ul.awards, ul.badges {
      margin: 1em;
-     min-height: 420px;
+     min-height: 100px;
      padding: 0pt;
+     width: 66%;
+}
+
+#home ul.awards, #home ul.badges {
+     min-height: 420px;
      width: 420px;
 }
 
@@ -153,12 +166,6 @@ li.award span.relation {
     
 }
 
-#badges section.badges_list ul.badges,
-#awards section.awards_list ul.awards {
-     min-height: 100px;
-     width: 66%;
-}
-
 form {
     
 }
@@ -185,5 +192,39 @@ form ul li label {
 form ul li input.submit {
      margin-left: 16ex;
      padding: 0.25em;
+}
+
+dl {
+    
+}
+
+dl dt {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     float: left;
+     margin: 0pt;
+     min-height: 1.125em;
+     padding: 0.5em 0.5em 0.5em 0pt;
+     text-align: right;
+     width: 15ex;
+}
+
+dl dd {
+     clear: right;
+     display: block;
+     margin: 0pt 0pt 0pt 17ex;
+     min-height: 1.25em;
+     padding: 0.5em 0em 0.5em 0pt;
+     text-indent: 0pt;
+}
+
+dl dd ul {
+     margin: 0;
+     padding: 0;
+}
+
+dl dd ul li {
+     list-style: none;
+     padding: 0.25em 0 0.25em 0;
+     margin: 0;
 }
 
