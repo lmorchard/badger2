@@ -28,19 +28,18 @@
             </div>
             <nav>
                 {% if request.user.is_authenticated() %}
-                    <a href="{{url('django.contrib.auth.views.logout')}}">Logout</a>
-                    -
-                    <a href="{{url('django.contrib.auth.views.password_change')}}">Change password</a>
-                    <br />
-                    Welcome back, <a href="{{url('badger.views.awards_by_user', request.user.username)}}">{{ request.user }}</a>
+                    {{ _('Welcome back, <a href="{user_url}">{user_name}</a>') | f(
+                        user_url=url('badger.views.awards_by_user', request.user.username),
+                        user_name=request.user) | safe }}
+                    (
+                    <a href="{{url('django.contrib.auth.views.logout')}}">{{_('settings')}}</a>, 
+                    <a href="{{url('django.contrib.auth.views.logout')}}">{{_('logout')}}</a>
+                    )
                 {% else %}
-                    <a href="{{url('registration.views.register')}}">Register</a>
-                    -
-                    <a href="{{url('django.contrib.auth.views.login')}}">Login</a>
-                    {#
-                    -
-                    <a href="#" class="browserid-signin" title="{{_('Sign In with BrowserID')}}"><img src="{{MEDIA_URL}}img/sign_in_blue.png" /></a>
-                    #}
+                    <form action="{{url('browserid_verify')}}" method="POST">
+                        <a href="#" class="browserid-signin" title="{{_('Sign In with BrowserID')}}"><img src="{{MEDIA_URL}}img/sign_in_blue.png" /></a>
+                        {{ browserid_form }}
+                    </form>
                 {% endif %}
             </nav>
         </header>
@@ -55,7 +54,7 @@
         </footer>
 
         {% block site_js %}
-            <!-- <script src="https://browserid.org/include.js" type="text/javascript"></script> -->
+            <script src="https://browserid.org/include.js" type="text/javascript"></script>
             {{ js('main') }}
             {% for script in scripts %}
                 {{ js(script) }}

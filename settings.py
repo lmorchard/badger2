@@ -60,23 +60,28 @@ INSTALLED_APPS = INSTALLED_APPS + (
     'south',
 )
 
-AUTHENTICATION_BACKENDS = (
-    # ...
-    'django_browserid.auth.BrowserIDBackend',
-    # ...
+TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
+    'django_browserid.context_processors.browserid_form',
 )
 
-# URL of a BrowserID verification service.
+
+AUTHENTICATION_BACKENDS = (
+    'django_browserid.auth.BrowserIDBackend',
+)
+
 BROWSERID_VERIFICATION_URL = 'https://browserid.org/verify'
+BROWSERID_CREATE_USER = True
 
-# CA cert file for validating SSL certificate
-BROWSERID_CACERT_FILE = ''
+def username_algo(email):
+    from django.contrib.auth.models import User
+    cnt, base_name = 0, email.split('@')[0]
+    username = base_name
+    while User.objects.filter(username=username).count() > 0:
+        cnt += 1
+        username = '%s_%s' % (base_name, cnt)
+    return username
 
-# Create user accounts automatically if no user is found.
-BROWSERID_CREATE_USER = False
+BROWSERID_USERNAME_ALGO = username_algo
 
-# Path to redirect to on successful login.
 LOGIN_REDIRECT_URL = '/'
-
-# Path to redirect to on unsuccessful login attempt.
 LOGIN_REDIRECT_URL_FAILURE = '/'

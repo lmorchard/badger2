@@ -21,8 +21,8 @@ header#masthead .logo a {
 header#masthead nav {
      color: #EEEEEE;
      position: absolute;
-     right: 1em;
-     top: 1em;
+     right: 3em;
+     top: 1.5em;
 }
 
 header#masthead nav a {

@@ -12,6 +12,10 @@ badger.autodiscover()
 from badger import Progress
 from badger_multiplayer.models import Badge, Award, Nomination
 
+from session_csrf import anonymous_csrf_exempt
+import django_browserid.views
+
+
 urlpatterns = patterns('',
 
     url(r'^$', direct_to_template, dict(
@@ -29,13 +33,16 @@ urlpatterns = patterns('',
     
     (r'^comments/', include('django.contrib.comments.urls')),
 
-    (r'^accounts/', include('django.contrib.auth.urls')),
+    (r'^accounts/', include('django.contrib.auth.urls')),    
     (r'^accounts/', include('registration.backends.default.urls')),
 
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
-    (r'^browserid/', include('django_browserid.urls')),
+    #(r'^browserid/', include('django_browserid.urls')),
+    # HACK: CSRF troubles wth browserid auth
+    url(r'^browserid/verify/', 
+        anonymous_csrf_exempt(django_browserid.views.verify),
+        name="browserid_verify"),
 
 )
 
