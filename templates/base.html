@@ -32,7 +32,7 @@
                     -
                     <a href="{{url('django.contrib.auth.views.password_change')}}">Change password</a>
                     <br />
-                    Welcome back, {{ request.user }}
+                    Welcome back, <a href="{{url('badger.views.awards_by_user', request.user.username)}}">{{ request.user }}</a>
                 {% else %}
                     <a href="{{url('registration.views.register')}}">Register</a>
                     -

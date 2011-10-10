@@ -41,6 +41,8 @@ MINIFY_BUNDLES = {
 }
 
 INSTALLED_APPS = INSTALLED_APPS + (
+    'django_browserid',
+
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
@@ -57,3 +59,24 @@ INSTALLED_APPS = INSTALLED_APPS + (
     # migrations
     'south',
 )
+
+AUTHENTICATION_BACKENDS = (
+    # ...
+    'django_browserid.auth.BrowserIDBackend',
+    # ...
+)
+
+# URL of a BrowserID verification service.
+BROWSERID_VERIFICATION_URL = 'https://browserid.org/verify'
+
+# CA cert file for validating SSL certificate
+BROWSERID_CACERT_FILE = ''
+
+# Create user accounts automatically if no user is found.
+BROWSERID_CREATE_USER = False
+
+# Path to redirect to on successful login.
+LOGIN_REDIRECT_URL = '/'
+
+# Path to redirect to on unsuccessful login attempt.
+LOGIN_REDIRECT_URL_FAILURE = '/'

@@ -35,6 +35,8 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
+    (r'^browserid/', include('django_browserid.urls')),
+
 )
 
 ## In DEBUG mode, serve media files through Django.
