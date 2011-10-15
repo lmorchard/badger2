@@ -18,13 +18,7 @@ import django_browserid.views
 
 urlpatterns = patterns('',
 
-    url(r'^$', direct_to_template, dict(
-        template='home.html',
-        extra_context=dict(
-            badge_list=Badge.objects.order_by('-modified').all()[:9],
-            award_list=Award.objects.order_by('-modified').all()[:9],
-        )
-    ), name='home'),
+    url(r'^$', 'badger.views.home', name='home'),
 
     (r'', include('examples.urls')),
 
