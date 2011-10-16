@@ -68,6 +68,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
 AUTHENTICATION_BACKENDS = (
     'django_browserid.auth.BrowserIDBackend',
 )
+AUTH_PROFILE_MODULE = "profiles.UserProfile"
 
 BROWSERID_VERIFICATION_URL = 'https://browserid.org/verify'
 BROWSERID_CREATE_USER = True
@@ -83,5 +84,5 @@ def username_algo(email):
 
 BROWSERID_USERNAME_ALGO = username_algo
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profiles/home'
 LOGIN_REDIRECT_URL_FAILURE = '/'

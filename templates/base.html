@@ -29,11 +29,10 @@
             <nav>
                 {% if request.user.is_authenticated() %}
                     {{ _('Welcome back, <a href="{user_url}">{user_name}</a>') | f(
-                        user_url=url('badger.views.awards_by_user', request.user.username),
+                        user_url=request.user.get_absolute_url(),
                         user_name=request.user) | safe }}
                     (
-                    <a href="{{url('django.contrib.auth.views.logout')}}">{{_('settings')}}</a>, 
-                    <a href="{{url('django.contrib.auth.views.logout')}}">{{_('logout')}}</a>
+                    <a href="{{ url('django.contrib.auth.views.logout') }}">{{_('logout')}}</a>
                     )
                 {% else %}
                     <form action="{{url('browserid_verify')}}" method="POST">

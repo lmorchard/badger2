@@ -170,6 +170,12 @@ form {
     
 }
 
+form fieldset {
+    margin: 1em 0.25em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+}
+
 form ul {
      margin: 0pt;
      padding: 0pt;
@@ -187,6 +193,16 @@ form ul li label {
      margin: 0.25em 0.5em 0.25em 0em;
      text-align: right;
      width: 15ex;
+}
+form ul li p.notes,
+form ul li p.help {
+    font-size: 0.8em;
+    margin: 0 0 0 20ex;
+    padding: 0.25em;
+}
+form ul li ul.errorlist {
+    margin: 0 0 0 16ex;
+    color: red;
 }
 
 form ul li input.submit {

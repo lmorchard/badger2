@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block pageid %}profile_detail{% endblock %}
+
+{% block content %}
+
+<h2>Profile for {{ user }}</h2>
+<dl class="profile">
+    <dt class="username">Username:</dt><dd>{{ user.username }}</dd>
+    <dt class="display_name">Display name:</dt><dd>{{ profile.display_name }}</dd>
+    <dt class="bio">Bio:</dt><dd>{{ profile.bio }}</dd>
+    <dt class="location">Location:</dt><dd>{{ profile.location }}</dd>
+    <dt class="created">Created:</dt><dd>{{ profile.created }}</dd>
+    <dt class="modified">Modified:</dt><dd>{{ profile.modified }}</dd>
+    <dt class="actions">Actions:</dt><dd><ul>
+        {% if profile.allows_edit(request.user) %}
+            <li><a href="{{ url('profiles.views.profile_edit', profile.user.username) }}">{{ _('Edit profile') }}</a>
+        {% endif %}
+    </ul></dd>
+</dl>
+
+{% endblock %}

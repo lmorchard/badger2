@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     
     (r'^comments/', include('django.contrib.comments.urls')),
 
+    (r'^profiles/', include('profiles.urls')),
+
     (r'^accounts/', include('django.contrib.auth.urls')),    
     (r'^accounts/', include('registration.backends.default.urls')),
 
