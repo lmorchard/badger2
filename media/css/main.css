@@ -1,246 +1,352 @@
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
 header#masthead {
-     background-color: #3C3C3C;
-     position: relative;
+    background-color: #3C3C3C;
+    position: relative;
 }
-
 header#masthead .logo {
-     width: 33%;
+    width: 33%;
 }
-
 header#masthead .logo a {
-     background: url("../img/logo.png") no-repeat scroll 0pt 0pt transparent;
-     border: 1px solid #373638;
-     color: #EEEEEE;
-     display: block;
-     font-size: 2.5em;
-     line-height: 94px;
-     padding-left: 110px;
-     text-decoration: none;
+    background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+    border: 1px solid #373638;
+    color: #EEEEEE;
+    display: block;
+    font-size: 2.5em;
+    line-height: 94px;
+    padding-left: 110px;
+    text-decoration: none;
 }
-
 header#masthead nav {
-     color: #EEEEEE;
-     position: absolute;
-     right: 3em;
-     top: 1.5em;
+    color: #EEEEEE;
+    position: absolute;
+    right: 3em;
+    top: 1.5em;
 }
-
 header#masthead nav a {
-     color: #AAAAAA;
+    color: #AAAAAA;
 }
-
 nav.pagination {
-     clear: both;
-     display: block;
-     padding: 1em 0.25em;
+    clear: both;
+    display: block;
+    padding: 1em 0.25em;
 }
-
 nav.pagination p.showing {
-     display: inline;
-     margin: 0pt;
-     padding: 0pt;
+    display: inline;
+    margin: 0;
+    padding: 0;
 }
-
 nav.pagination ul.paging {
-     display: inline;
-     margin: 0pt;
-     padding: 0pt;
+    display: inline;
+    margin: 0;
+    padding: 0;
 }
-
 nav.pagination ul.paging li {
-     display: inline;
+    display: inline;
 }
-
 nav.pagination ul.paging li.first {
-    
 }
-
 nav.pagination ul.paging li.last {
-    
 }
-
 nav.pagination ul.paging li.next {
-    
 }
-
 nav.pagination ul.paging li.prev {
-    
 }
-
 section#main {
-     padding: 0.5em 1em;
+    padding: 0.5em 1em;
 }
-
 section#things_to_do {
-     padding: 0.125em 0.5em;
+    padding: 0;
 }
-
 section#things_to_do nav ul li {
-     list-style-type: square;
+    list-style-type: square;
 }
-
-section#recent_awards, section#recent_badges {
-     border-radius: 12px 12px 12px 12px;
-     border: 1px solid #BBBBBB;
-     float: left;
-     margin: 1em;
-     padding: 0.125em 0.5em;
-     position: relative;
-     width: 435px;
+section#recent_badges {
+    border-radius: 12px 12px 12px 12px;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-
-section#recent_awards h1, section#recent_badges h1 {
-     text-align: center;
+section#recent_badges h1 {
 }
-
-section#recent_awards nav, section#recent_badges nav {
-     position: absolute;
-     right: 1em;
-     top: 0.5em;
+section#recent_badges nav {
+    left: 10em;
+    position: absolute;
+    top: 1.25em;
 }
-
-section#recent_awards nav a, section#recent_badges nav a {
-     font-size: 0.8em;
+section#recent_badges nav ul {
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0;
 }
-
-ul.awards, ul.badges {
-     margin: 1em;
-     min-height: 100px;
-     padding: 0pt;
-     width: 66%;
+ul.badges {
+    margin: 0;
+    padding: 0;
 }
-
-#home ul.awards, #home ul.badges {
-     min-height: 420px;
-     width: 420px;
+#home ul.badges {
 }
-
-ul.awards li, ul.badges li {
-     border-radius: 8px 8px 8px 8px;
-     border: 1px solid #EEEEEE;
-     list-style: none outside none;
-     margin: 2px;
-     padding: 0pt;
+ul.badges li {
+    border: 1px solid #EEEEEE;
+    border-radius: 8px 8px 8px 8px;
+    list-style: none outside none;
+    margin: 0 0.75em 0.75em 0;
+    padding: 0;
 }
-
-ul.awards li img, ul.badges li img {
-     border-radius: 8px 8px 8px 8px;
-     display: block;
+ul.badges li img {
+    border-radius: 8px 8px 8px 8px;
+    display: block;
 }
-
-li.badge, li.award {
-     display: block;
-     float: left;
-     padding: 0.25em;
-     position: relative;
+li.badge {
+    display: block;
+    float: left;
+    position: relative;
 }
-
-li.badge a.image, li.award a.image {
-     display: block;
+li.badge a.image {
+    display: block;
 }
-
-li.badge a.label, li.award a.label {
-     background: none repeat scroll 0% 0% #222222;
-     border-radius: 0pt 0pt 8px 8px;
-     bottom: 0pt;
-     color: #FFFFFF;
-     display: block;
-     font-size: 0.9em;
-     opacity: 0.85;
-     position: absolute;
-     text-align: center;
-     text-decoration: none;
-     width: 128px;
+li.badge a.label {
+    background: none repeat scroll 0 0 #222222;
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    font-size: 0.85em;
+    opacity: 0.85;
+    padding: 0.25em 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 128px;
 }
-
-li.badge span.badge_title, li.badge span.relation, li.badge span.user, li.award span.badge_title, li.award span.relation, li.award span.user {
-     display: block;
-     padding: 2px;
+li.badge a.label:before {
+    content: "\2738\00a0";
 }
-
-li.award span.relation {
-     font-size: 0.75em;
+li.badge span.badge_title, li.badge span.relation, li.badge span.user {
+    display: block;
+    padding: 2px;
 }
-
+section#recent_awards {
+    position: relative;
+}
+section#recent_awards h1 {
+}
+section#recent_awards nav {
+    left: 10em;
+    position: absolute;
+    top: 1.25em;
+}
+section#recent_awards nav ul {
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0;
+}
+section#recent_awards nav ul li {
+}
+section#recent_awards nav a {
+}
+ul.awards {
+    margin: 0;
+    padding: 0;
+}
+#home ul.awards {
+}
+ul.awards li.award {
+    float: left;
+    height: 128px;
+    list-style: none outside none;
+    margin: 0 0.75em 0.75em 0;
+    position: relative;
+    width: 260px;
+}
+ul.awards li.award img {
+    border-radius: 8px 8px 8px 8px;
+}
+ul.awards li.award a.avatar_image {
+    position: absolute;
+    right: 0;
+}
+ul.awards li.award a.award_image {
+    left: 0;
+    position: absolute;
+}
+ul.awards li.award a.label {
+}
+ul.awards li.award span.badge_title, li.award span.relation, li.award span.user {
+    background: none repeat scroll 0 0 #000000;
+    border-radius: 8px 8px 8px 8px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 0.85em;
+    opacity: 0.75;
+    padding: 0.25em 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+}
+ul.awards li.award span.badge_title {
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    left: 0;
+    width: 128px;
+}
+ul.awards li.award span.badge_title:before {
+    content: "\2738\00a0";
+}
+ul.awards li.award span.relation {
+    border-radius: 8px 8px 8px 8px;
+    bottom: 32px;
+    font-size: 0.8em;
+    left: 80px;
+    opacity: 0.75;
+    width: 96px;
+}
+ul.awards li.award span.relation:after {
+    content: "\00a0\21e8";
+}
+ul.awards li.award span.user {
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    right: 0;
+    width: 128px;
+}
+ul.awards li.award span.user:before {
+    content: "\263a\00a0";
+}
+#badge_detail section#detail {
+    float: left;
+    width: 33%;
+}
+ul.awardees {
+    margin: 0;
+    padding: 0;
+}
+ul.awardees li.awardee {
+    float: left;
+    height: 128px;
+    list-style: none outside none;
+    margin: 0 0.75em 0.75em 0;
+    position: relative;
+    width: 128px;
+}
+ul.awardees li.awardee .avatar_image {
+}
+ul.awardees li.awardee .avatar_image img {
+    border-radius: 8px 8px 8px 8px;
+}
+ul.awardees li.awardee .label {
+    background: none repeat scroll 0 0 #000000;
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    color: #FFFFFF;
+    font-size: 0.85em;
+    left: 0;
+    opacity: 0.8;
+    padding: 0.25em 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 128px;
+    z-index: 10;
+}
+ul.awardees li.awardee .label:before {
+    content: "\263a\00a0";
+}
+section#recent_awardees {
+    margin-left: 33%;
+    position: relative;
+}
+section#recent_awardees nav {
+    left: 12em;
+    position: absolute;
+    top: 0.25em;
+}
+section#recent_awardees nav ul {
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0;
+}
+section#recent_awardees nav ul li {
+}
 #badges section.badge_list {
-    
 }
-
 form {
-    
 }
-
 form fieldset {
+    border: 1px solid #CCCCCC;
     margin: 1em 0.25em;
     padding: 0.5em;
-    border: 1px solid #ccc;
 }
-
 form ul {
-     margin: 0pt;
-     padding: 0pt;
+    margin: 0;
+    padding: 0;
 }
-
 form ul li {
-     list-style: none outside none;
-     margin: 0pt;
-     padding: 0.25em;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0.25em;
 }
-
 form ul li label {
-     display: block;
-     float: left;
-     margin: 0.25em 0.5em 0.25em 0em;
-     text-align: right;
-     width: 15ex;
+    display: block;
+    float: left;
+    margin: 0.25em 0.5em 0.25em 0;
+    text-align: right;
+    width: 15ex;
 }
-form ul li p.notes,
-form ul li p.help {
+form ul li p.notes, form ul li p.help {
     font-size: 0.8em;
     margin: 0 0 0 20ex;
     padding: 0.25em;
 }
 form ul li ul.errorlist {
-    margin: 0 0 0 16ex;
     color: red;
+    margin: 0 0 0 16ex;
 }
-
 form ul li input.submit {
-     margin-left: 16ex;
-     padding: 0.25em;
+    margin-left: 16ex;
+    padding: 0.25em;
 }
-
 dl {
-    
 }
-
 dl dt {
-     background: none repeat scroll 0% 0% #EEEEEE;
-     float: left;
-     margin: 0pt;
-     min-height: 1.125em;
-     padding: 0.5em 0.5em 0.5em 0pt;
-     text-align: right;
-     width: 15ex;
+    background: none repeat scroll 0 0 #EEEEEE;
+    float: left;
+    margin: 0;
+    min-height: 1.125em;
+    padding: 0.5em 0.5em 0.5em 0;
+    text-align: right;
+    width: 15ex;
 }
-
 dl dd {
-     clear: right;
-     display: block;
-     margin: 0pt 0pt 0pt 17ex;
-     min-height: 1.25em;
-     padding: 0.5em 0em 0.5em 0pt;
-     text-indent: 0pt;
+    clear: right;
+    display: block;
+    margin: 0 0 0 17ex;
+    min-height: 1.25em;
+    padding: 0.5em 0;
+    text-indent: 0;
 }
-
 dl dd ul {
-     margin: 0;
-     padding: 0;
+    margin: 0;
+    padding: 0;
 }
-
 dl dd ul li {
-     list-style: none;
-     padding: 0.25em 0 0.25em 0;
-     margin: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0.25em 0;
 }
 
