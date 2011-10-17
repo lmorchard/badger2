@@ -26,7 +26,8 @@
             <div class="logo">
                 <a href="{{url('home')}}">Badger</a>
             </div>
-            <nav>
+            <nav><ul>
+                <li>
                 {% if request.user.is_authenticated() %}
                     {{ _('Welcome back, <a href="{user_url}">{user_name}</a>') | f(
                         user_url=request.user.get_absolute_url(),
@@ -40,6 +41,14 @@
                         {{ browserid_form }}
                     </form>
                 {% endif %}
+                </li>
+                <li>
+                    <form method="GET" action="{{ url('badger.views.badges_list') }}">
+                        <input type="text" name="q" id="id_q" 
+                            value="{{ request.GET.get('q', '') }}"
+                            placeholder="{{ _('search badges') }}" />
+                    </form>
+                </li>
             </nav>
         </header>
 
