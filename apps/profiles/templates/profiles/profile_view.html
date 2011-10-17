@@ -6,9 +6,7 @@
 
 <h2>Profile for {{ user }}</h2>
 <dl class="profile">
-    {% if profile.avatar %}
-        <dt class="avatar">Avatar:</dt><dd><img src="{{ profile.avatar.url }}" /></dd>
-    {% endif %}
+    <dt class="avatar">Avatar:</dt><dd><img src="{{ user_avatar(profile.user) }}" /></dd>
     <dt class="username">Username:</dt><dd>{{ user.username }}</dd>
     <dt class="display_name">Display name:</dt><dd>{{ profile.display_name }}</dd>
     <dt class="location">Location:</dt><dd>{{ profile.location }}</dd>
