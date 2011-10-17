@@ -2,28 +2,34 @@
     clear: both;
     content: ".";
     display: block;
-    height: 0;
+    height: 0pt;
     line-height: 0;
     visibility: hidden;
 }
+
 .clearfix {
     display: inline-block;
 }
+
 html[xmlns] .clearfix {
     display: block;
 }
+
 * html .clearfix {
     height: 1%;
 }
+
 header#masthead {
     background-color: #3C3C3C;
     position: relative;
 }
+
 header#masthead .logo {
     width: 33%;
 }
+
 header#masthead .logo a {
-    background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/logo.png") no-repeat scroll 0pt 0pt transparent;
     border: 1px solid #373638;
     color: #EEEEEE;
     display: block;
@@ -32,182 +38,238 @@ header#masthead .logo a {
     padding-left: 110px;
     text-decoration: none;
 }
+
 header#masthead nav {
     color: #EEEEEE;
     position: absolute;
     right: 3em;
     top: 1.5em;
 }
+
 header#masthead nav a {
     color: #AAAAAA;
 }
+
 nav.pagination {
     clear: both;
     display: block;
     padding: 1em 0.25em;
 }
+
 nav.pagination p.showing {
     display: inline;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 nav.pagination ul.paging {
     display: inline;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 nav.pagination ul.paging li {
     display: inline;
 }
+
 nav.pagination ul.paging li.first {
+
 }
+
 nav.pagination ul.paging li.last {
+
 }
+
 nav.pagination ul.paging li.next {
+
 }
+
 nav.pagination ul.paging li.prev {
+
 }
+
 section#main {
     padding: 0.5em 1em;
 }
+
 section#things_to_do {
-    padding: 0;
+    padding: 0pt;
 }
+
 section#things_to_do nav ul li {
     list-style-type: square;
 }
+
 section#recent_badges {
     border-radius: 12px 12px 12px 12px;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
     position: relative;
 }
+
 section#recent_badges h1 {
+
 }
+
 section#recent_badges nav {
     left: 10em;
     position: absolute;
     top: 1.25em;
 }
+
 section#recent_badges nav ul {
     font-size: 0.85em;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 ul.badges {
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 #home ul.badges {
+
 }
+
 ul.badges li {
-    border: 1px solid #EEEEEE;
     border-radius: 8px 8px 8px 8px;
+    border: 1px solid #EEEEEE;
     list-style: none outside none;
-    margin: 0 0.75em 0.75em 0;
-    padding: 0;
+    margin: 0pt 0.75em 0.75em 0pt;
+    padding: 0pt;
 }
+
 ul.badges li img {
     border-radius: 8px 8px 8px 8px;
     display: block;
 }
+
 li.badge {
     display: block;
     float: left;
     position: relative;
 }
+
 li.badge a.image {
     display: block;
 }
+
 li.badge a.label {
-    background: none repeat scroll 0 0 #222222;
-    border-radius: 0 0 8px 8px;
-    bottom: 0;
+    background: none repeat scroll 0pt 0pt #222222;
+    border-radius: 0pt 0pt 8px 8px;
+    bottom: 0pt;
     color: #FFFFFF;
     display: block;
     font-size: 0.85em;
     opacity: 0.85;
-    padding: 0.25em 0;
+    padding: 0.25em 0pt;
     position: absolute;
     text-align: center;
     text-decoration: none;
     width: 128px;
 }
+
 li.badge a.label:before {
-    content: "\2738\00a0";
+    content: "✸ ";
 }
+
 li.badge span.badge_title, li.badge span.relation, li.badge span.user {
     display: block;
     padding: 2px;
 }
+
 section#recent_awards {
     position: relative;
 }
+
 section#recent_awards h1 {
+
 }
+
 section#recent_awards nav {
     left: 10em;
     position: absolute;
     top: 1.25em;
 }
+
 section#recent_awards nav ul {
     font-size: 0.85em;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 section#recent_awards nav ul li {
+
 }
+
 section#recent_awards nav a {
+
 }
+
 ul.awards {
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 #home ul.awards {
+
 }
+
 ul.awards li.award {
     float: left;
     height: 128px;
     list-style: none outside none;
-    margin: 0 0.75em 0.75em 0;
+    margin: 0pt 0.75em 0.75em 0pt;
     position: relative;
-    width: 260px;
+    width: 256px;
+    border: 1px solid #ddd;
+    border-radius: 8px 8px 8px 8px;
 }
+
 ul.awards li.award img {
     border-radius: 8px 8px 8px 8px;
 }
+
 ul.awards li.award a.avatar_image {
     position: absolute;
-    right: 0;
+    right: 0pt;
 }
+
 ul.awards li.award a.award_image {
-    left: 0;
+    left: 0pt;
     position: absolute;
 }
+
 ul.awards li.award a.label {
+
 }
+
 ul.awards li.award span.badge_title, li.award span.relation, li.award span.user {
-    background: none repeat scroll 0 0 #000000;
+    background: none repeat scroll 0pt 0pt #000000;
     border-radius: 8px 8px 8px 8px;
     color: #FFFFFF;
     display: block;
     font-size: 0.85em;
     opacity: 0.75;
-    padding: 0.25em 0;
+    padding: 0.25em 0pt;
     position: absolute;
     text-align: center;
     text-decoration: none;
     z-index: 10;
 }
+
 ul.awards li.award span.badge_title {
-    border-radius: 0 0 8px 8px;
-    bottom: 0;
-    left: 0;
+    border-radius: 0pt 0pt 8px 8px;
+    bottom: 0pt;
+    left: 0pt;
     width: 128px;
 }
+
 ul.awards li.award span.badge_title:before {
-    content: "\2738\00a0";
+    content: "✸ ";
 }
+
 ul.awards li.award span.relation {
     border-radius: 8px 8px 8px 8px;
     bottom: 32px;
@@ -216,137 +278,169 @@ ul.awards li.award span.relation {
     opacity: 0.75;
     width: 96px;
 }
+
 ul.awards li.award span.relation:after {
-    content: "\00a0\21e8";
+    content: " ⇨";
 }
+
 ul.awards li.award span.user {
-    border-radius: 0 0 8px 8px;
-    bottom: 0;
-    right: 0;
+    border-radius: 0pt 0pt 8px 8px;
+    bottom: 0pt;
+    right: 0pt;
     width: 128px;
 }
+
 ul.awards li.award span.user:before {
-    content: "\263a\00a0";
+    content: "☺ ";
 }
+
 #badge_detail section#detail {
     float: left;
     width: 33%;
 }
+
 ul.awardees {
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 ul.awardees li.awardee {
     float: left;
     height: 128px;
     list-style: none outside none;
-    margin: 0 0.75em 0.75em 0;
+    margin: 0pt 0.75em 0.75em 0pt;
     position: relative;
     width: 128px;
 }
+
 ul.awardees li.awardee .avatar_image {
+
 }
+
 ul.awardees li.awardee .avatar_image img {
     border-radius: 8px 8px 8px 8px;
 }
+
 ul.awardees li.awardee .label {
-    background: none repeat scroll 0 0 #000000;
-    border-radius: 0 0 8px 8px;
-    bottom: 0;
+    background: none repeat scroll 0pt 0pt #000000;
+    border-radius: 0pt 0pt 8px 8px;
+    bottom: 0pt;
     color: #FFFFFF;
     font-size: 0.85em;
-    left: 0;
+    left: 0pt;
     opacity: 0.8;
-    padding: 0.25em 0;
+    padding: 0.25em 0pt;
     position: absolute;
     text-align: center;
     text-decoration: none;
     width: 128px;
     z-index: 10;
 }
+
 ul.awardees li.awardee .label:before {
-    content: "\263a\00a0";
+    content: "☺ ";
 }
+
 section#recent_awardees {
     margin-left: 33%;
     position: relative;
 }
+
 section#recent_awardees nav {
     left: 12em;
     position: absolute;
     top: 0.25em;
 }
+
 section#recent_awardees nav ul {
     font-size: 0.85em;
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 section#recent_awardees nav ul li {
+
 }
+
 #badges section.badge_list {
+
 }
+
 form {
+
 }
+
 form fieldset {
     border: 1px solid #CCCCCC;
     margin: 1em 0.25em;
     padding: 0.5em;
 }
+
 form ul {
-    margin: 0;
-    padding: 0;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 form ul li {
     list-style: none outside none;
-    margin: 0;
+    margin: 0pt;
     padding: 0.25em;
 }
+
 form ul li label {
     display: block;
     float: left;
-    margin: 0.25em 0.5em 0.25em 0;
+    margin: 0.25em 0.5em 0.25em 0pt;
     text-align: right;
     width: 15ex;
 }
+
 form ul li p.notes, form ul li p.help {
     font-size: 0.8em;
-    margin: 0 0 0 20ex;
+    margin: 0pt 0pt 0pt 20ex;
     padding: 0.25em;
 }
+
 form ul li ul.errorlist {
     color: red;
-    margin: 0 0 0 16ex;
+    margin: 0pt 0pt 0pt 16ex;
 }
+
 form ul li input.submit {
     margin-left: 16ex;
     padding: 0.25em;
 }
+
 dl {
+
 }
+
 dl dt {
-    background: none repeat scroll 0 0 #EEEEEE;
+    background: none repeat scroll 0pt 0pt #EEEEEE;
     float: left;
-    margin: 0;
+    margin: 0pt;
     min-height: 1.125em;
-    padding: 0.5em 0.5em 0.5em 0;
+    padding: 0.5em 0.5em 0.5em 0pt;
     text-align: right;
     width: 15ex;
 }
+
 dl dd {
     clear: right;
     display: block;
-    margin: 0 0 0 17ex;
+    margin: 0pt 0pt 0pt 17ex;
     min-height: 1.25em;
-    padding: 0.5em 0;
-    text-indent: 0;
-}
-dl dd ul {
-    margin: 0;
-    padding: 0;
-}
-dl dd ul li {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0.25em 0;
+    padding: 0.5em 0pt;
+    text-indent: 0pt;
 }
 
+dl dd ul {
+    margin: 0pt;
+    padding: 0pt;
+}
+
+dl dd ul li {
+    list-style: none outside none;
+    margin: 0pt;
+    padding: 0.25em 0pt;
+}
