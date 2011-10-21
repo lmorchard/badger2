@@ -208,7 +208,7 @@ section#recent_awards nav ul {
      padding: 0pt;
 }
 
-#profile_detail section#recent_awards, #profile_detail section#recent_badges {
+#profile_detail section.related {
     margin-left: 33.25%;
 }
 #profile_detail section#recent_awards nav {

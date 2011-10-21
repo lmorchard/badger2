@@ -28,6 +28,35 @@
     </dl>
 </section>
 
+<section class="related">
+
+{# TODO: Move this into Nomination model? #}
+{% if request.user == profile.user or request.user.is_superuser or request.user.is_staff %}
+    {% set nominations_to_approve = nominations_pending_approval(profile.user) %}
+    {% if nominations_to_approve %}
+    <section id="nominations_to_approve">
+        <h2>Nominations for you to approve</h2>
+        <ul class="nominations">
+            {% for nomination in nominations_to_approve %}
+                <li><a href="{{ nomination.get_absolute_url() }}">{{ nomination }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% set nominations_to_accept = nominations_pending_acceptance(profile.user) %}
+    {% if nominations_to_accept %}
+    <section id="nominations_to_accept">
+        <h2>Nominations for you to accept</h2>
+        <ul class="nominations">
+            {% for nomination in nominations_to_accept %}
+                <li><a href="{{ nomination.get_absolute_url() }}">{{ nomination }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+{% endif %}
+
 {% set award_list = user_awards(profile.user) %}
 {% if award_list %}
 <section id="recent_awards">
@@ -55,5 +84,7 @@
     {% include "badger/includes/badges_list.html" %}
 </section>
 {% endif %}
+
+</section>
 
 {% endblock %}
