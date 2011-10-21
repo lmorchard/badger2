@@ -208,12 +208,14 @@ section#recent_awards nav ul {
      padding: 0pt;
 }
 
-section#recent_awards nav ul li {
-    
+#profile_detail section#recent_awards, #profile_detail section#recent_badges {
+    margin-left: 33.25%;
 }
-
-section#recent_awards nav a {
-    
+#profile_detail section#recent_awards nav {
+    top: 0.25em; left: 12.5em;
+}
+#profile_detail section#recent_badges nav {
+    top: 0.25em; left: 19.5em;
 }
 
 ul.awards {
@@ -304,6 +306,11 @@ ul.awards li.award span.user:before {
 }
 
 #badge_detail section#detail {
+     float: left;
+     width: 33%;
+}
+
+#profile_detail section#detail {
      float: left;
      width: 33%;
 }
