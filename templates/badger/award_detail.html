@@ -16,9 +16,11 @@
 
 <section class="award">
     {% include "badger/includes/award_full.html" %}
-    <form class="obi_issuer">
-        <button class="issue">Add this badge to your Open Badge Backpack</button>
-    </form>
+    {% if award.user == request.user %}
+        <form class="obi_issuer">
+            <button class="issue">Add this badge to your Open Badge Backpack</button>
+        </form>
+    {% endif %}
 </section>
 
 <section class="badge">
