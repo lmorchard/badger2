@@ -5,7 +5,7 @@
 {% block extrahead %}
     <link rel="alternate" type="application/atom+xml"
         title="{{ _('Recent awards') }}"
-        href="{{ url('badger.feeds.awards_recent', 'atom') }}" />
+        href="{{ request.build_absolute_uri(url('badger.feeds.awards_recent', 'atom')) }}" />
 {% endblock %}
 
 {% block content %}

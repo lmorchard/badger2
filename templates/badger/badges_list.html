@@ -2,6 +2,12 @@
 
 {% block pageid %}badges{% endblock %}
 
+{% block extrahead %}
+    <link rel="alternate" type="application/atom+xml"
+        title="{{ _('Recent awards') }}"
+        href="{{ request.build_absolute_uri(url('badger_multiplayer.feeds.badges_recent', 'atom')) }}" />
+{% endblock %}
+
 {% block content %}
 <section class="badges_list">
     <h2>Badges</h2>

@@ -91,3 +91,5 @@ LOGIN_REDIRECT_URL_FAILURE = '/'
 SOUTH_LOGGING_ON = False
 SOUTH_TESTS_MIGRATE = False
 SKIP_SOUTH_TESTS = True
+
+OBI_BASE_URL = "http://beta.openbadges.org/"

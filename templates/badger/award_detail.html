@@ -7,7 +7,7 @@
 {% block extrahead %}
     <link rel="alternate" type="application/json"
         title="{{ _('{title} (JSON)') | f(title=award) }}"
-        href="{{ url('badger.award_detail_json', badge.slug, award.pk) }}" />
+        href="{{ request.build_absolute_uri(url('badger.award_detail_json', badge.slug, award.pk)) }}" />
 {% endblock %}
 
 {% block content %}
@@ -16,11 +16,50 @@
 
 <section class="award">
     {% include "badger/includes/award_full.html" %}
+    <form class="obi_issuer">
+        <button class="issue">Add this badge to your Open Badge Backpack</button>
+    </form>
 </section>
 
 <section class="badge">
     <h3>Badge</h3>
     {% include "badger/includes/badge_full.html" %}
 </section>
+
+{% endblock %}
+
+{% block js %}
+
+    <script type="text/javascript"
+        src="{{ settings.OBI_BASE_URL }}issuer.js"></script>
+
+    <script type="text/javascript">
+        // TODO: Move this into an included library, rather than inline code.
+        $(document).ready(function () {
+            $("form.obi_issuer button.issue").click(function () {
+
+                // Grab the hosted assertion URL from the header link.
+                var assertion_url = $('head link[rel="alternate"]' +
+                                      '[type="application/json"]')
+                                    .attr('href');
+
+                // Fire up the backpack lightbox.
+                OpenBadges.issue([assertion_url], function (errors, successes) {
+
+                    if (errors.length) {
+                        // TODO: Do something better here.
+                        window.alert("Failed to add award to your backpack.");
+                    }
+                    
+                    if (successes.length) {
+                        // TODO: Do something... at all?
+                    }
+
+                });
+
+                return false;
+            });
+        });
+    </script>
 
 {% endblock %}
