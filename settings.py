@@ -67,6 +67,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
 
 AUTHENTICATION_BACKENDS = (
     'django_browserid.auth.BrowserIDBackend',
+    'django.contrib.auth.backends.ModelBackend'
 )
 AUTH_PROFILE_MODULE = "profiles.UserProfile"
 
@@ -86,3 +87,7 @@ BROWSERID_USERNAME_ALGO = username_algo
 
 LOGIN_REDIRECT_URL = '/profiles/home'
 LOGIN_REDIRECT_URL_FAILURE = '/'
+
+SOUTH_LOGGING_ON = False
+SOUTH_TESTS_MIGRATE = False
+SKIP_SOUTH_TESTS = True
